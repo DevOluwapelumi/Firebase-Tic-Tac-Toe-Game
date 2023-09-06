@@ -13,3 +13,4 @@ Game History: Keep track of your game history with a built-in feature that recor
 Responsive Design: The game is designed to work seamlessly on both desktop and mobile devices, ensuring an enjoyable gaming experience on any screen size.
 
 Clean Codebase: The codebase is well-organized and follows best practices to make it easy for developers to understand, customize, and contribute to the project.
+Open Source: This project is open source and welcomes contributions from the community. Feel free to fork the repository, submit pull requests, or report issues to help make the game even better.
