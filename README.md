@@ -14,3 +14,7 @@ Responsive Design: The game is designed to work seamlessly on both desktop and m
 
 Clean Codebase: The codebase is well-organized and follows best practices to make it easy for developers to understand, customize, and contribute to the project.
 Open Source: This project is open source and welcomes contributions from the community. Feel free to fork the repository, submit pull requests, or report issues to help make the game even better.
+
+
+
+Whether you're looking to play a quick game of Tic-Tac-Toe with friends or want to learn more about Firebase integration in a real-world application, this project provides a fun and educational experience. Get started today and enjoy the classic game with a modern twist!
