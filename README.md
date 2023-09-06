@@ -10,3 +10,6 @@ Firebase Integration: The game is powered by Firebase, a cloud-based platform th
 User Authentication: Users can create accounts, log in, and personalize their gaming experience. Firebase Authentication securely handles user authentication, making sure that only authorized players can access the game.
 
 Game History: Keep track of your game history with a built-in feature that records wins, losses, and ties. Analyze your performance and challenge yourself to improve.
+Responsive Design: The game is designed to work seamlessly on both desktop and mobile devices, ensuring an enjoyable gaming experience on any screen size.
+
+Clean Codebase: The codebase is well-organized and follows best practices to make it easy for developers to understand, customize, and contribute to the project.
