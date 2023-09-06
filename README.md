@@ -18,3 +18,12 @@ Open Source: This project is open source and welcomes contributions from the com
 
 
 Whether you're looking to play a quick game of Tic-Tac-Toe with friends or want to learn more about Firebase integration in a real-world application, this project provides a fun and educational experience. Get started today and enjoy the classic game with a modern twist!
+
+
+Technologies Used:
+
+Firebase Realtime Database: For real-time game state synchronization and user authentication.
+JavaScript: The core programming language used to build the game logic.
+HTML/CSS: For creating the user interface and styling.
+Firebase Authentication: For user account management.
+GitHub Actions: For CI/CD and automatic deployment.
