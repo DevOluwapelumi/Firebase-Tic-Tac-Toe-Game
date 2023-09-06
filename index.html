@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <audio id="musicFile" src="Gubha.mp3" loop></audio>
+
+
+    <div class="container-fluid ">
+        <h1  class="text-center" class="ticTacToe" style="color: yellow;">TIC TAC TOE
+            <button class="btn btn-warning mx-auto"  onclick="playMusic()" id="songBtn">Play Music</button>
+        </h1>
+
+        <div class="row">
+            <!-- Input User Details -->
+            <div id="inputDetails">
+            <div class="col-md-7 mx-auto">
+
+                <div class="enterDetails">
+                    <div class="form-floating ">
+                        <input class="form-control my-2" type="text" id="playerOne"  class="nameInputOne" placeholder="player1">
+                        <label >Enter player 1 name below</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control my-2" type="text" id="playerTwo" class="nameInputTwo" placeholder="playertwo">
+                        <label class="playertwop" >Enter player 2 name below</label>
+                    </div>
+                    <div class="bg-dark text-warning my-2" id="errorInput"></div>
+                </div>
+                <button class="btn btn-warning w-100" onclick="enterGame()" class="enterButton">Enter</button>
+            </div>
+            <!-- Input User Details -->
+        </div>
+             <!-- Game Board -->
+            <div id="games" class="col-md-5">
+                <center>
+                    <h4 class="bg-dark text-warning my-2" id="winner" class="winnerDiv"></h4>
+
+                <table  width="320px"  class="tab">
+                    <tr>
+                        <td>
+                           <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="one">
+                        </td>
+                        <td>
+                            <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="two" >
+                         </td>
+                         <td>
+                            <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="three">
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="four">
+                         </td>
+                         <td>
+                             <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="five">
+                          </td>
+                          <td>
+                             <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="six">
+                          </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="seven">
+                         </td>
+                         <td>
+                             <input class="tic" type="button" class="disab" onclick="clickMe(event),win()" value="" id="eight">
+                          </td>
+                          <td>
+                             <input class="tic" type="button" name="disab" onclick="clickMe(event),win()" value="" id="nine">
+                          </td>
+                    </tr>
+                </table>
+                <button onclick="conti()" class="btn btn-warning" class="continueButton">Continue</button>
+                <button onclick="restar()" class="btn btn-warning" class="restartButton">Restart</button>
+
+            </center>
+            </div>
+            <br>
+             <!-- Game Board Ends-->
+
+
+            <!-- Score Board -->
+            <div class="col-md-5 mx-auto">
+
+                <div id="game">
+                    <div class="scoreBoard mx-auto" >
+                        <h1>Score Board</h1>
+                        <hr>
+                        <table class="py-2" width="100%">
+                            <tr>
+                                <td> <h1>Name</h1></td>
+                                <td> <h1>Score</h1></td>
+                            </tr>
+                            <tr>
+                                <td> <h2 id="scoreBoardOne"></h2></td>
+                                <td><h2 id="scoreBoardScoreOne"></h2></td>
+                            </tr>
+                            <tr>
+                                <td><h2 id="scoreBoardTwo"></h2></td>
+                                <td><h2 id="scoreBoardScoreTwo"></h2></td>
+                            </tr>
+                        </table>
+
+
+
+
+                    </div>
+            </div>
+             <!-- Score Board Ends -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<script>
+    playMusic()
+    v = 0
+    pOneScore = 0
+    pTwoScore = 0
+function clickMe(e)
+{
+if (v==0 && e.target.value==""){
+    e.target.value = "X";
+    v = 1
+}
+else if (v==1 && e.target.value=="")
+{
+    e.target.value = "O";
+    v = 0
+}
+}
+function win(){
+    if(one.value=="X" && two.value=="X" && three.value=="X"){
+         winner.innerHTML = playerOne.value + " Won"
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+         disab();
+
+    } 
+    if(four.value=="X" && five.value=="X" && six.value=="X"){
+        winner.innerHTML = playerOne.value + " Won"
+        pOneScore++
+        scoreBoardOne.innerHTML= playerOne.value
+        scoreBoardScoreOne.innerHTML = pOneScore
+        disab();
+    } 
+    if(seven.value=="X" && eight.value=="X" && nine.value=="X"){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(one.value=="X" && four.value=="X" && seven.value=="X"){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(two.value=="X" && five.value=="X" && eight.value=="X"){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(three.value=="X" && six.value=="X" && nine.value=="X" ){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(three.value=="X" && five.value=="X" && seven.value=="X" ){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(one.value=="X" && five.value=="X" && nine.value=="X"){
+         winner.innerHTML = playerOne.value + " Won"
+         disab();
+         pOneScore++
+         scoreBoardOne.innerHTML= playerOne.value 
+         scoreBoardScoreOne.innerHTML = pOneScore
+    }
+    if(one.value=="O" && two.value=="O" && three.value=="O" ){
+        winner.innerHTML = playerTwo.value + " Won"
+        disab();
+        pTwoScore++
+         scoreBoardTwo.innerHTML= playerTwo.value 
+         scoreBoardScoreTwo.innerHTML = pTwoScore
+    }  
+    if(four.value=="O" && five.value=="O" && six.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value 
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+    }  
+    if(seven.value=="O" && eight.value=="O" && nine.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value 
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+    } 
+    if(one.value=="O" && four.value=="O" && seven.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value 
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+    } 
+    if(two.value=="O" && five.value=="O" && eight.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+         scoreBoardTwo.innerHTML= playerTwo.value 
+         scoreBoardScoreTwo.innerHTML = pTwoScore
+
+    } 
+    if(three.value=="O" && six.value=="O" && nine.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value 
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+    } 
+    if(three.value=="O" && five.value=="O" && seven.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+    } 
+    if(one.value=="O" && five.value=="O" && nine.value=="O" ){
+         winner.innerHTML = playerTwo.value + " Won"
+         disab();
+         pTwoScore++
+          scoreBoardTwo.innerHTML= playerTwo.value 
+          scoreBoardScoreTwo.innerHTML = pTwoScore
+
+    } 
+}
+
+function disab(){
+         document.getElementById("one").disabled = "true"
+         document.getElementById("two").disabled = "true"
+         document.getElementById("three").disabled = "true"
+         document.getElementById("four").disabled = "true"
+         document.getElementById("five").disabled = "true"
+         document.getElementById("six").disabled = "true"
+         document.getElementById("seven").disabled = "true"
+         document.getElementById("eight").disabled = "true"
+         document.getElementById("nine").disabled = "true"
+}
+
+
+function enterGame(){
+    if(playerOne.value !=="" && playerTwo.value !==""){
+    document.getElementById("game").style.display = "block";
+    document.getElementById("games").style.display = "block";
+    inputDetails.style.display="none"
+    scoreBoardOne.innerHTML= playerOne.value
+    scoreBoardScoreOne.innerHTML = pOneScore
+    scoreBoardTwo.innerHTML= playerTwo.value 
+    scoreBoardScoreTwo.innerHTML = pTwoScore
+    errorInput.innerHTML=""
+    }
+    else{
+        errorInput.innerHTML="Kindly Fill in Names!!!"
+    }
+
+}
+function conti(){
+         document.getElementById("one").disabled = false
+         document.getElementById("two").disabled = false
+         document.getElementById("three").disabled = false
+         document.getElementById("four").disabled = false
+         document.getElementById("five").disabled = false
+         document.getElementById("six").disabled = false
+         document.getElementById("seven").disabled = false
+         document.getElementById("eight").disabled = false
+         document.getElementById("nine").disabled = false
+         one.value="";
+         two.value="";
+         three.value="";
+         four.value="";
+         five.value="";
+         six.value="";
+         seven.value="";
+         eight.value="";
+         nine.value="";
+         winner.innerHTML=""
+
+}
+function restar(){
+    location.reload();
+}
+var playing = false;
+function playMusic(){
+    console.log(playing)
+    var orin = new Audio('Gubha.mp3')
+    if(playing==false){
+        musicFile.play()
+        playing=true
+        songBtn.innerText = 'Pause music'
+    }else{
+        musicFile.pause()
+        //orin.pause()
+        playing=false
+        songBtn.innerText = 'Play music'
+    }
+
+
+
+    //musicFile.play()
+}
+</script>
+</body>
+</html>

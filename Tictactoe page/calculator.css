@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* body {
+background: red;
+animation: mymove 5s infinite;
+}
+.container {
+    margin-top: 100px;
+}
+
+@keyframes mymove {
+from {background-color: red;}
+to {background-color: blue;}
+} */
+#calc{
+	margin-top: 100px !important;
+	background-color: rgb(235, 130, 10);
+	width: 300px;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 1px 1px 2000px rgb(192, 11, 11);
+}
+#text1{
+	font-family: segoe UI;
+	color: white;
+	font-size: 10pt;
+	float: left;
+}
+#top-right-box{
+	float: right;
+	background: grey;
+	height: 30px;
+	width: 40%;
+}
+#line{
+	background: white;
+	height: 2px;
+	margin-top: 50px;
+}
+#display_area{
+	background: white;
+	margin-top: 10px;
+	padding: 5px;
+	padding-bottom: 12px;
+	border-radius: 5px;
+	border: 2px solid #DC143C;
+}
+input{
+	border-style: none;
+	font-size: 150%;
+	font-family: lcd;
+}
+.result{
+	padding-left: 10px;
+}
+#operation{
+	margin-top: 5px;
+	text-align: center;
+}
+.op_btn{
+	background: white;
+	color: #081F2C;
+	font-family: Arial;
+	font-size: 15pt;
+	border-style: none;
+	border-radius: 3px;
+	width: 18%;
+	cursor: pointer;
+}
+.op_btn:hover{
+	background: #DC143C;
+	color: white;
+}
+#line2{
+	background: white;
+	height: 2px;
+	margin-top: 10px;
+}
+#number_area{
+	background: #DC143C;
+	padding-bottom: 10px;
+	border-bottom: 2px solid white;
+	border-top: 2px solid white;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding-top: 5px;
+	text-align: center;
+}
+.btn{
+	background:white;
+	color: #081F2C;
+	font-family: Arial;
+	font-size: 18pt;
+	border-style: none;
+	border-radius: 3px;
+	width: 22%;
+/*	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;*/
+	cursor: pointer;
+}
+.btn:hover{
+	background: black;
+	color: white;
+}
+#text2{
+	color: white;
+	font-family: segoe UI;
+	font-family: 12pt;
+	margin-top: 10px;
+	position: relative;
+	margin-bottom: -10px;
+}
+#operator{
+	color: #DC143C;
+	font-family: segoe UI;
+	margin-right: 10px;
+}
+#state{
+	color: red;
+}
+#top-right-box{
+	font-family: segoe UI;
+	font-size: 13pt;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+@media (max-width: 1260px) and (min-width: 100px){
+	.result{
+		padding-left: 0px;
+	}
+}
+/* @media (max-width: 400px) and (min-width: 100px){
+	#calc{
+			margin-top: 100px !important;
+			background-color: rgb(235, 130, 10);
+			border-radius: 5px;
+			margin: 0 auto;
+			padding: 10px;
+			box-shadow: 1px 1px 2000px rgb(192, 11, 11);
+		}
+	} */
+@media screen and (max-width: 400px) {
+	#calc{
+		height: 30px;
+		width: 100px !important;
+	}
+}

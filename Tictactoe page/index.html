@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+<script>
+	screen=false;
+	a="";
+	b="";
+	oprp="";
+	var op,t,h,m,s,r;
+	function timee(){
+		var t = new Date();
+		// h = t.getHours();
+		// m = m.getMinutes();
+		// s = s.getSeconds();
+		d =t.toLocaleTimeString();
+		document.getElementById('top-right-box').innerHTML=d;
+		setTimeout(timee,1000)
+	}
+	function del(){
+		if(screen){
+		if(scv.value!=="0")
+			scv.value=scv.value.slice(0, -1)
+		}
+	}
+	function ce(){
+		if(screen){
+			scv.value=0;
+			operator.innerHTML="&nbsp;";
+			rs.value="";
+		}
+	}
+	function on(){
+		screen=true;
+		scv.value=0;
+		operator.innerHTML="&nbsp;";
+		rs.value="";
+		r=0;
+	}
+	function off(){
+		screen=false;
+		scv.value="Screen Off";
+		operator.innerHTML="&nbsp;";
+		rs.value="";
+	}
+	function button(x){
+		if(screen){
+			if(scv.value=="0"){
+			if(x=="."){
+				scv.value+=x;
+			}else{
+				scv.value=x;
+			}
+			}
+			else {
+			scv.value=scv.value+x;
+			}
+		}
+	}
+	function ans(){
+		if(screen){
+		scv.value=r;
+	}
+	}
+	function opr(y){
+		if(screen){
+			oprp=y;
+			a = scv.value;
+			scv.value="";
+			operator.innerHTML=y;
+			if(y=='sqrt'){
+				operator.innerHTML='&#8730';
+			}
+			if(y=='cbrt'){
+				operator.innerHTML='&#8731';
+			}
+			if(y=='rsp'){
+				operator.innerHTML='&#8731';
+			}
+			if(y=='pie'){
+				operator.innerHTML='&#8508;';
+			}
+			
+		}
+	}
+	function sin() {
+		if(screen){
+		operator.innerHTML="Sin("+scv.value+")";
+		r= Math.sin(scv.value * Math.PI / 180)
+		rs.value=r;
+		}
+	}
+	function cos() {
+		if(screen){
+		operator.innerHTML="Cos("+scv.value+")";
+		r = Math.cos(scv.value * Math.PI / 180)
+		rs.value= r;
+		}
+	}
+	function tan() {
+		if(screen){
+		operator.innerHTML="Tan("+scv.value+")";
+		r=Math.tan(scv.value * Math.PI / 180);
+		rs.value=r;
+		}
+	}
+	function cosh(){
+		if(screen){
+		operator.innerHTML="Cosh("+scv.value+")";
+		r=Math.cosh(scv.value);
+		rs.value=r;
+		}
+	}
+	function sinh(){
+		if(screen){
+		operator.innerHTML="Sinh("+scv.value+")";
+		r=Math.sinh(scv.value);
+		rs.value=r;
+		}
+	}
+	function Tanh(){
+		if(screen){
+		operator.innerHTML="Tanh("+scv.value+")";
+		r=Math.tanh(scv.value)
+		rs.value=r;
+		}
+	}
+	function sv() {
+		if(screen){
+		operator.innerHTML="sin<sup>-1</sup>("+scv.value+")";
+		r=Math.asin(scv.value * Math.PI / 180);
+		rs.value= r;
+		}
+	}
+	function cv() {
+		if(screen){
+		operator.innerHTML="cos<sup>-1</sup>("+scv.value+")";
+		r=Math.acos(scv.value * Math.PI / 180);
+		rs.value= r;
+		}
+	}
+	function tv() {
+		if(screen){
+		operator.innerHTML="tan<sup>-1</sup>("+scv.value+")";
+		r=Math.atan(scv.value * Math.PI / 180);
+		rs.value= r;
+		}
+	}
+	function log() {
+		if(screen){
+		operator.innerHTML="log("+scv.value+")";
+		r=Math.log(scv.value);
+		rs.value=r;
+		}
+	}
+	function sqrt() {
+		if(screen){
+		operator.innerHTML="&#8730("+scv.value+")";
+		r=Math.sqrt(scv.value);
+		rs.value=r;
+		}
+	}
+	function cbrt() {
+		if(screen){
+		operator.innerHTML="&#8731("+scv.value+")";
+		r=Math.cbrt(scv.value);
+		rs.value=r;
+		}
+	}
+	function pie() {
+		if(screen){
+		if(scv.value=="0"){
+			operator.innerHTML="&#8508";
+			r=Math.PI;
+			rs.value=r;
+		}else{
+			operator.innerHTML="&#8508("+scv.value+")";
+			r=Math.PI*scv.value;
+			rs.value=r;
+		}
+		}
+	}
+	function exp() {
+		if(screen){
+		operator.innerHTML="E<sup>"+scv.value+"</sup>";
+		r=Math.exp(scv.value);
+		rs.value=r;
+		}
+	}
+	function iox() {
+		if(screen){
+		operator.innerHTML="1/"+scv.value;
+		r=1/scv.value;
+		rs.value=r;
+		}
+	}
+	function x2() {
+		if(screen){
+		operator.innerHTML=scv.value+"<sup>2</sup>";
+		r=Math.pow(scv.value, 2);
+		rs.value=r;
+		}
+	}
+	function x3() {
+		if(screen){
+		operator.innerHTML=scv.value+"<sup>3</sup>";
+		r=Math.pow(scv.value, 3);
+		rs.value=r;
+		}
+	}
+	function opp(){
+		if(screen){
+			b = scv.value;
+			op = operator.innerHTML;
+			operator.innerHTML='=';
+			if(oprp==""){
+				rs.value=scv.value;
+				r=rs.value;
+			}
+			if(op=='+'){
+				r = parseFloat(a) + parseFloat(b);
+				rs.value=r;
+			}
+			if(op=='-'){
+				rs.value= parseFloat(a) - parseFloat(b);
+				r=rs.value;
+			}
+			else if(oprp=='÷'){
+				rs.value= parseFloat(a) / parseFloat(b);
+				r=rs.value;
+			}
+			else if(oprp=='x'){
+				rs.value= parseFloat(a) * parseFloat(b);
+				r=rs.value;
+			}
+			else if(oprp=='x<sup>y</sup>'){
+				rs.value= Math.pow(a, b);
+				r=rs.value;
+			}
+			if(rs.value=="NaN"){
+				rs.value="Math Error";
+			}
+		}
+	}
+</script>
+<body onload="timee()">
+	<div id="calc">
+		<div>
+			<span id="text1">Oluwapelumi Basic Calculator <br> version 1.0.0</span>
+			<span id="top-right-box">&nbsp;</span>
+		</div>
+		<div id="line">&nbsp;</div>
+		<div id="display_area">
+			<input id="scv" value="Screen Off" style="width: 100%">
+			<div id="operator" style="font-size: 100%; text-align: right; display: block; width: 100%">&nbsp;</div>
+			<input id="rs" style="float: right; text-align: right;" class="result"></p>
+		</div>
+		<div id="line2">&nbsp;</div>
+		<div id="operation">
+				<button class="op_btn" onclick="cos()">cos</button>
+				<button class="op_btn" onclick="sin()">sin</button>
+				<button class="op_btn" onclick="tan()">tan</button>
+				<button class="op_btn" onclick="cosh()">cosh</button>
+				<button class="op_btn" onclick="sinh()">sinh</button><br><br>
+				<button class="op_btn" onclick="cv()"><small>cos<sup>-1</sup></small></button>
+				<button class="op_btn" onclick="sv()"><small>sin<sup>-1</sup></small></button>
+				<button class="op_btn" onclick="tv()"><small>tan<sup>-1</sup></small></button>
+				<button class="op_btn" onclick="log()">log</button>
+				<button class="op_btn" onclick="tanh()">tanh</button><br><br>
+				<button class="op_btn" onclick="sqrt()">&#8730;</button>
+				<button class="op_btn" onclick="cbrt()">&#8731;</button>
+				<button class="op_btn" onclick="opr('x<sup>y</sup>')">x<sup>y</sup></button>
+				<button class="op_btn" onclick="x2()">x<sup>2</sup></button>
+				<button class="op_btn" onclick="x3()">x<sup>3</sup></button><br><br>
+				<button class="op_btn" onclick="exp()">E<sup>x</sup></button>
+				<button class="op_btn" onclick="iox()">1/x</button>
+				<button class="op_btn" onclick="pie()">&#8508;</button>
+				<button class="op_btn" onclick="button('-')">±</button>
+				<button class="btn" onclick="del()" style="color: red;">DEL</button><br><br>
+		</div>
+		<div id="number_area">
+				<button class="btn" onclick="button(7)">7</button>
+				<button class="btn" onclick="button(8)">8</button>
+				<button class="btn" onclick="button(9)">9</button>
+				<button class="btn" onclick="opr('+')">+</button><br><br>
+			
+				<button class="btn" onclick="button(6)">6</button>
+				<button class="btn" onclick="button(5)">5</button>
+				<button class="btn" onclick="button(4)">4</button>
+				<button class="btn" onclick="opr('-')">-</button><br><br>
+			
+			
+				<button class="btn" onclick="button(3)">3</button>
+				<button class="btn" onclick="button(2)">2</button>
+				<button class="btn" onclick="button(1)">1</button>
+				<button class="btn" onclick="opr('÷')">÷</button><br><br>
+			
+				<button class="btn" onclick="ans()" style="color: red">Ans</button>
+				<button class="btn" onclick="button(0)">0</button>
+				<button class="btn" onclick="button('.')">.</button>
+				<button class="btn" onclick="opr('x')">x</button><br><br>
+			
+				<button class="btn" onclick="ce()" style="color: red">CE</button>
+				<button onclick="on()" class="btn" id="state">ON</button>
+				<button onclick="off()" class="btn" id="state">OFF</button>
+				<button onclick="opp()" class="btn">=</button>
+			
+		</table>
+		</div>
+		<p id="text2" align="center">&#169; Oluwapelumi Corporation</p>
+	</div>
+</body>
+</html>
