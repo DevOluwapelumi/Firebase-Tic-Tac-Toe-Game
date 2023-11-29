@@ -4,7 +4,7 @@ This repository hosts a simple yet engaging multiplayer Tic-Tac-Toe game built u
 ##  Features:
 
 ###  Real-time Multiplayer: 
-  Challenge your friends or other players to a game of Tic-Tac-Toe in real-time. Firebase Realtime Database ensures that game updates are instantly synchronized between players.
+  Challenge your friends or other players to a game of Tic-Tac-Toe in real time. Firebase Realtime Database ensures that game updates are instantly synchronized between players.
 Firebase Integration: 
   The game is powered by Firebase, a cloud-based platform that provides features like real-time database synchronization, user authentication, and more. Firebase makes it easy to manage game state and user data.
 ###  User Authentication: 
@@ -22,8 +22,13 @@ Whether you're looking to play a quick game of Tic-Tac-Toe with friends or want 
 
 ##  Technologies Used:
 
-Firebase Realtime Database: For real-time game state synchronization and user authentication.
-JavaScript: The core programming language used to build the game logic.
-HTML/CSS: For creating the user interface and styling.
-Firebase Authentication: For user account management.
-GitHub Actions: For CI/CD and automatic deployment.
+###  Firebase Realtime Database:   
+  For real-time game state synchronization and user authentication.
+###  JavaScript: 
+  The core programming language used to build the game logic.
+###  HTML/CSS:
+  For creating the user interface and styling.
+###  Firebase Authentication: 
+  For user account management.
+###  GitHub Actions: 
+  For CI/CD and automatic deployment.
